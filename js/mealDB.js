@@ -74,10 +74,14 @@ const displayMealDetails = meal => {
 
     const modalBody = document.getElementById('modalBody');
     modalBody.innerHTML = `
-        <img class="img-fluid" src="${meal.strMealThumb}">
+        <img class="img-fluid" src="${meal.strMealThumb}"> 
+        <h3> Instructions<br></h3>
+        <h6>${meal.strInstructions}</h6>
+        <h5> Press the <a href="${meal.strYoutube}" target="_blank">Link</a> for Turorial Video</h5>
+        <h5> For more instructions, press the <a href="${meal.strSource}" target="_blank">Link</a></h5>
     `
     // <img class="img-fluid" src="${meal.strMealThumb}">
-    // console.log(meal);
+    console.log(meal);
 }
 
 
