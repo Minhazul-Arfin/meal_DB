@@ -17,7 +17,7 @@
     <main>
         <!-- SEARCH CONTAINER -->
         <section style="height: 120px;" class="d-flex align-items-center justify-content-center">
-            <div >
+            <div>
                 <input type="text" id="search-field" class="px-2" placeholder="Search">
                 <button onclick="searchMeal()" class="btn btn-primary">Search</button>
             </div>
@@ -27,11 +27,32 @@
         <!-- MEALS CONTAINER -->
         <section>
             <div id="meals-container" class="row row-cols-1 row-cols-md-4 g-4">
-                
             </div>
         </section>
+
+        <!-- Modal -->
+        <div  class="modal fade"  tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div id="mealDetails" class="modal-content">
+                    <div  class="modal-header">
+                        <h5 class="modal-title" id="modalTitle">Modal title</h5>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div id="modalBody" class="modal-body">
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
+    
 
     <!-- JS -->
     <script src="js/mealDB.js"></script>

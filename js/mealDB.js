@@ -7,7 +7,7 @@ const loadMeals = (searchText) => {
 
 
 const displayMeals = meals => {
-    // console.log(meals);
+    console.log(meals[0]);
     // STEP 1: CONTAINER ELEMENT
     const mealsContainer = document.getElementById('meals-container');
 
@@ -15,7 +15,7 @@ const displayMeals = meals => {
     mealsContainer.innerText = '';
 
     meals.forEach(meal => {
-        // console.log(meal)
+        // console.log(meal.idMeal)
 
         // STEP 2: CREATE CHILD FOR EACH ELEMENT
         const mealDiv = document.createElement('div');
@@ -29,7 +29,14 @@ const displayMeals = meals => {
                             <h5 class="card-title">${meal.strMeal}</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in
                                 to additional content. This content is a little bit longer.</p>
+                                <button 
+                                onclick="loadMealDetails(${meal.idMeal})"
+                                type="button" class="btn btn-primary" data-bs-toggle="modal" 
+                                data-bs-target="#mealDetails">
+                                Show Details
+                                </button>
                         </div>
+                        
                     </div>
         `
 
@@ -41,11 +48,38 @@ const displayMeals = meals => {
 
 
 // SEARCH METHOD
-const searchMeal = () =>{
+const searchMeal = () => {
     const searchText = document.getElementById('search-field').value;
     console.log(searchText);
     loadMeals(searchText);
 }
 
+
+// SHOW DETAILS
+const loadMealDetails = mealId => {
+    console.log("details button clicked")
+    console.log(mealId)
+
+    const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`
+    fetch(url)
+        .then(res => res.json())
+        .then(data => displayMealDetails(data.meals[0]));
+}
+
+
+const displayMealDetails = meal => {
+    // setting modal title
+    const modalTitle = document.getElementById('modalTitle');
+    modalTitle.innerText = meal.strMeal;
+
+    const modalBody = document.getElementById('modalBody');
+    modalBody.innerHTML = `
+        <img class="img-fluid" src="${meal.strMealThumb}">
+    `
+    // <img class="img-fluid" src="${meal.strMealThumb}">
+    // console.log(meal);
+}
+
+
 // LOADMEALS CALLED BY 'FISH' AS DEFAULT VALUE
-loadMeals('rice');
+loadMeals('beef');
