@@ -14,19 +14,21 @@
     <header>
 
     </header>
-    <main>
+    <main class="image-fluid" style="background-image: url('/bg/food.jpg');
+    height: 100%">>
+        <p class="h1 fw-bold text-center text-light mt-5" style="font-family: Cursive; font-weight: bold; font-size: 60px; text-shadow: 2px 2px red;">Welcome Foodie !</p>
         <!-- SEARCH CONTAINER -->
-        <section style="height: 120px;" class="d-flex align-items-center justify-content-center">
-            <div>
-                <input type="text" id="search-field" class="px-2" placeholder="Search">
-                <button onclick="searchMeal()" class="btn btn-primary">Search</button>
+        <section style="height: 120px;" class="d-flex align-items-center justify-content-center ">
+            <div class="row">
+                <input type="text" id="search-field" class="form-control grid px-2 my-2" placeholder="Search Your Food Here!">
+                <button onclick="searchMeal()" class="btn btn-success">Search</button>
             </div>
         </section>
 
 
         <!-- MEALS CONTAINER -->
         <section>
-            <div id="meals-container" class="row row-cols-1 row-cols-md-4 g-4">
+            <div id="meals-container" class="row row-cols-1 row-cols-md-4 g-4 mx-3">
             </div>
         </section>
 

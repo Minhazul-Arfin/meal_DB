@@ -23,7 +23,7 @@ const displayMeals = meals => {
 
         // STEP 3: SET CONTENT OF THE CHILD
         mealDiv.innerHTML = `
-        <div class="card">
+        <div class="card" style="background-color:#fdf2f8">
                         <img src="${meal.strMealThumb}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">${meal.strMeal}</h5>
@@ -31,7 +31,7 @@ const displayMeals = meals => {
                                 to additional content. This content is a little bit longer.</p>
                                 <button 
                                 onclick="loadMealDetails(${meal.idMeal})"
-                                type="button" class="btn btn-primary" data-bs-toggle="modal" 
+                                type="button" class="btn btn-success" data-bs-toggle="modal" 
                                 data-bs-target="#mealDetails">
                                 Show Details
                                 </button>
